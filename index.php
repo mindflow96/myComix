@@ -100,7 +100,7 @@ if(is_dir($dir) == true){
 								$jpg_c = 0;
 								$sub_dircounter++;
 								break;
-							} elseif(strpos(strtolower($subfileinfo->getFilename()),".jpg") !== false || strpos(strtolower($subfileinfo->getFilename()),".png") !== false || strpos(strtolower($subfileinfo->getFilename()),".gif") !== false || strpos(strtolower($subfileinfo->getFilename()),".jpeg") !== false) {
+							} elseif(strpos(strtolower($subfileinfo->getFilename()),".jpg") !== false || strpos(strtolower($subfileinfo->getFilename()),".png") !== false || strpos(strtolower($subfileinfo->getFilename()),".gif") !== false || strpos(strtolower($subfileinfo->getFilename()),".jpeg") !== false || strpos(strtolower($subfileinfo->getFilename()),".webp") !== false) {
 								$jpg_folder[$fileinfo->getFilename()][$jpg_c] = $subfileinfo->getFilename();
 								$jpg_count[$fileinfo->getFilename()] = $jpg_c;
 								$jpg_c++;
@@ -159,7 +159,7 @@ if(is_dir($dir) == true){
 					$file_list[$filecounter]['time'] = $fileinfo->getMTime();
 					$file_list[$filecounter]['size'] = $fileinfo->getSize();
 					$filecounter++;
-				} elseif(strpos(strtolower($fileinfo->getFilename()), ".jpg") !== false || strpos(strtolower($fileinfo->getFilename()), ".jpeg") !== false || strpos(strtolower($fileinfo), ".png") !== false || strpos(strtolower($fileinfo), ".gif") !== false) {
+				} elseif(strpos(strtolower($fileinfo->getFilename()), ".jpg") !== false || strpos(strtolower($fileinfo->getFilename()), ".jpeg") !== false || strpos(strtolower($fileinfo), ".png") !== false || strpos(strtolower($fileinfo), ".gif") !== false || strpos(strtolower($fileinfo), ".webp") !== false) {
 						$jpg_list[$jpgcounter] = $fileinfo->getFilename();
 						$jpgcounter++;
 				}
@@ -582,6 +582,7 @@ if($use_listcover == "y"){
 		$configfile = $zip_file."/image_files.json";
 					if(is_File($configfile) === false){
 						$jpg_cover = file_get_contents($zip_file."/".$jpg_folder[str_replace("_imgfolder","", $fileinfo)][0]);
+                        var_dump($jpg_cover);
 						$size = getimagesizefromstring($jpg_cover);
 						if($size[0] > $size[1]) {
 							$x_point = ($size[0]/2) - $size[1];
@@ -763,9 +764,9 @@ if($use_listcover == "y"){
 						}
 						$find_img = n_sort($find_img);
 						for ($findthumb = 0; $findthumb < $zip_numfile; $findthumb++) {
-							if(!strpos(strtolower($find_img[$findthumb]), ".jpg") && !strpos(strtolower($find_img[$findthumb]), ".jpeg") && !strpos(strtolower($find_img[$findthumb]), ".png") && !strpos(strtolower($find_img[$findthumb]), ".gif")){
+							if(!strpos(strtolower($find_img[$findthumb]), ".jpg") && !strpos(strtolower($find_img[$findthumb]), ".jpeg") && !strpos(strtolower($find_img[$findthumb]), ".png") && !strpos(strtolower($find_img[$findthumb]), ".gif") && !strpos(strtolower($find_img[$findthumb]), ".webp")){
 								continue;
-							} elseif (strpos(strtolower($find_img[$findthumb]), ".jpg") !== false || strpos(strtolower($find_img[$findthumb]), ".jpeg") !== false || strpos(strtolower($find_img[$findthumb]), ".png") !== false || strpos(strtolower($find_img[$findthumb]), ".gif") !== false) {
+							} elseif (strpos(strtolower($find_img[$findthumb]), ".jpg") !== false || strpos(strtolower($find_img[$findthumb]), ".jpeg") !== false || strpos(strtolower($find_img[$findthumb]), ".png") !== false || strpos(strtolower($find_img[$findthumb]), ".gif") !== false|| strpos(strtolower($find_img[$findthumb]), ".webp") !== false) {
 								$thumbnail_index = $findthumb;
 								break;
 							}

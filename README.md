@@ -9,7 +9,7 @@ PHP7 이상 버전 및 php-zip, php-gd 설치된 웹서버 필요.</p>
 
 <p>자신의 환경에 맞게 config.php 수정하라. 아래의 두가지 변수를 설정하면 된다.</p>
 
-<pre style="background-color: #DDDDDD;"><code class="php language-php">$base_dir = "/myComix"; //만화가 있는 절대경로
+<pre style="background-color: #333;"><code class="php language-php">$base_dir = "/myComix"; //만화가 있는 절대경로
 $maxview = "18"; //한페이지에 보여줄 만화 갯수(폴더도 이 숫자만큼만 한 화면에서 보여진다)
 </code></pre>
 
@@ -84,6 +84,24 @@ $maxview = "18"; //한페이지에 보여줄 만화 갯수(폴더도 이 숫자�
 
 <p>이는 대부분 권한이 없거나, PHP모듈이 설치되어있지 않아 발생한다. <br />
 <code>php-zip</code>, <code>php-gd</code> 모듈이 로드되고 있는지 확인하라.</p>
+
+<p><br></p>
+
+<hr />
+
+<p><br></p>
+
+<h2 id="-1">Fork 정보 - v0.5 시작</h2>
+
+<p><br></p>
+
+<ul>
+<li> v0.5 </li>
+</ul>
+
+<p>
+webp 지원 php 7.0 이상에서 읽기 가능
+</p>
 
 <p><br></p>
 

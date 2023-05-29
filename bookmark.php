@@ -65,7 +65,7 @@ if($_GET['mode'] == "delete_bookmark"){
 		$counter = 0;
 		$iterator = new DirectoryIterator($base_file);
 		foreach ($iterator as $jpgfile) {
-			if (strpos(strtolower($jpgfile), ".jpg") !== false || strpos(strtolower($jpgfile), ".jpeg") !== false || strpos(strtolower($jpgfile), ".png") !== false || strpos(strtolower($jpgfile), ".gif") !== false) {
+			if (strpos(strtolower($jpgfile), ".jpg") !== false || strpos(strtolower($jpgfile), ".jpeg") !== false || strpos(strtolower($jpgfile), ".png") !== false || strpos(strtolower($jpgfile), ".gif") !== false || strpos(strtolower($jpgfile), ".webp") !== false) {
 				$list[$counter] = $base_file."/".$jpgfile;
 				$counter++;
 			}
