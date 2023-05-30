@@ -105,7 +105,12 @@ $maxview = "18"; //한페이지에 보여줄 만화 갯수(폴더도 이 숫자�
 </ul>
 
 <p>
-webp 지원 php 7.0 이상에서 읽기 가능
+webp 지원 php 7.0 이상에서 읽기 가능<br>
+압축된 webp php 7.3 이상에서 섬네일 적용 가능 (적용이후 확인)<br>
+
+```
+https://www.php.net/manual/en/function.imagecreatefromstring.php
+```
 </p>
 
 <p><br></p>
